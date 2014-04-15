@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "small-projects",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,5 +7,10 @@
   },
   "dependencies": {
     "express": "3.4.8"
-  }
+  },
+  "description": "website of some web projects I have done",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "Kai Kang",
+  "license": "ISC"
 }
