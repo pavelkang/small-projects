@@ -8,5 +8,9 @@ exports.index = function(req, res){
 };
 
 exports.googleAuthFinished = function(req, res){
-	res.sendfile("views/googleAuthFinished.html")
+	res.sendfile("views/googleAuthFinished.html");
+}
+
+exports.saveToGoogle = function(req, res){
+	res.sendfile("views/saveToGoogle.html");
 }

@@ -1,0 +1,11 @@
+[
+	{"name":"Pomodoro", "lang":"Python", "date":"2014-01-31",
+	"des":"A web app that connects to Evernote and helps users get their work done using Pomodoro.",
+	"imageUrl" : "images/icons/android.png"},
+	{"name":"SummonCobot", "lang":"Java&Python", "date":"2014-04-10",
+	"des":"An android app that summons cobot in Gates Center. A major project in CMU Cobot Lab. Server written in Python Flask.",
+	"imageUrl" : "images/icons/android.png"},
+	{"name":"Pokemon3D", "lang":"Python", "date":"2013-11-20",
+	"des":"3D Pokemon game in Panda3D. 15-112 Term Project.",
+	"imageUrl" : "images/icons/android.png"}
+]

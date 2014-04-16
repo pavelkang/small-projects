@@ -1,0 +1,34 @@
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+}
+
+#top_bar {
+	border : 0;
+	color:#A4c739;
+	background-color: #A4c739;
+	height:2px;
+}
+
+body {
+	padding-left:50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	background-color:#f9f9f9;
+	font-family: 'Roboto', sans-serif;
+}
+
+img {
+	height: 2%;
+	width: 2%;
+}
+
+#container {
+	padding-top: 20px;
+}
+
+#project_name {
+	display:inline-block;
+	box-shadow: 10px 10px 5px #888888;
+	font-family: 'ubuntu', sans-serif;
+}

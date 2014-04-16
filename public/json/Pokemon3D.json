@@ -1,0 +1,7 @@
+{
+	"name"         : "Pokemon 3D",
+	"techniques"   : ["Python-Panda3D", "Blender"],
+	"detailed_des" : "I used the 3D engine Panda3D to create this Pokemon3D, which has two modes. In Roam Mode, the player can walk around in a 3D setting with pokemons. In Ball Mode, the player controls a Pokeball to catch Pikachu. The project involves making animation with Blender, Object-Oriented Programming in Python, and AI",
+	"demo"         : "https://www.youtube.com/watch?v=pnw_GkSfXMI",
+	"src"          : "NA"
+}

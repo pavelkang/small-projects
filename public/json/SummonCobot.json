@@ -1,0 +1,7 @@
+{
+	"name"         : "SummonCobot",
+	"techniques"   : ["Python-Flask", "Android","Matplotlib"],
+	"detailed_des" : "The Android app collects all the Wifi data and sent it to the server, built with Flask. The server calculates the position of the phone and send a command to Cobot to ask it to move to that position",
+	"demo"         : "NA",
+	"src"          : "NA"
+}

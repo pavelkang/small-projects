@@ -1,0 +1,7 @@
+{
+	"name"         : "Pomodoro",
+	"techniques"   : ["Python-Flask", "Facebook-API","Evernote-API"],
+	"detailed_des" : "We build the server with Python Flask, and templating language Jinja2. We used python API for Facebook and Evernote",
+	"demo"         : "https://flask-kaikang.appspot.com",
+	"src"          : "NA"
+}

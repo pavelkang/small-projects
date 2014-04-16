@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="mainApp">
 <head>
 	<title>Kai Kang's Projects</title>
+	<!-- Load JS Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular-route.js"></script>
+	<script src="/javascripts/mainApp.js"></script>
+	<script src="/javascripts/controller.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
 </head>
 <body>
-	<h1>Welcome to Kai's projects page</h1>
+	<h1 class="animated fadeInLeft">Welcome to Kai's projects page</h1>
+	<hr id="top_bar">
+	<div data-ng-view id="container"></div>
 </body>
 </html>
