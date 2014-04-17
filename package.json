@@ -6,8 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.8",
-    "googleapis": "*"
+    "express": "3.4.8"
   },
   "description": "website of some web projects I have done",
   "main": "app.js",
