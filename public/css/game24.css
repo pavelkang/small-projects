@@ -1,6 +1,9 @@
 .btn.btn-embossed {
 	width:60px;
 }
+.form-control.input-sm{
+	width:120px;
+}
 /*
 #first {
 	position: relative;
