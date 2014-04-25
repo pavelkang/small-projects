@@ -4,6 +4,27 @@
 .form-control.input-sm{
 	width:120px;
 }
+
+.btn.btn-default {
+	width:50px;
+	background-color: #7f8c8d;
+}
+.btn.btn-primary {
+	width:50px;
+
+}
+.btn.btn-warning {
+	width:50px;
+
+}
+.btn.btn-danger {
+	width:50px;
+	height:42px; /*better way?*/
+}
+.btn.btn-inverse {
+	width:50px;
+}
+
 /*
 #first {
 	position: relative;
@@ -44,7 +65,5 @@
 }
 
 #feedback {
-	position: absolute;
-	right:20%;
-	
+	color:#27ae60;
 }

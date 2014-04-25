@@ -79,6 +79,9 @@ game24.controller('NumberController', function($scope, $parse){
 			$scope.expr = $scope.expr.slice(0,-1);
 		}
 		break;
+	case 11:
+		$scope.expr = "";
+		break;
 	}
 	}
 
