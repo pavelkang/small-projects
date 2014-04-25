@@ -2,18 +2,22 @@ var game24 = angular.module('game24', []);
 game24.controller('NumberController', function($scope, $parse){
 	$scope.numbers = [1,2,3,4];
 	var result = {};
+	$scope.expr = "";
 	$scope.$watch('expr', function(newVal, oldVal, scope){
 		if (newVal !== oldVal) {
 			try{
+				/*
 				var parseFun = $parse(newVal);
-				result = parseFun(scope);}
+				result = parseFun(scope);*/
+				result = eval(newVal);
+			}
 			catch(err){null;}
 		}
 	});
 	$scope.init = function() {
 		for (var i=0; i<4; i++){
-			$scope.numbers[i] = randomCard();
-		}
+			$scope.numbers[i] = randomCard();}
+		for (var i=0; i<4; i++){console.log($scope.numbers[i])}		
 	};
 	$scope.submit = function() {
 		if (result==24 && validate($scope.numbers,$scope.expr)) {
@@ -23,6 +27,40 @@ game24.controller('NumberController', function($scope, $parse){
 			console.log("Wrong!");
 		}
 	}
+	$scope.press = function(n) {
+	switch (n){
+	case 0:
+		$scope.expr += ($scope.numbers[0]).toString();
+		break;
+	case 1:
+		$scope.expr += ($scope.numbers[1]).toString();
+		break;
+	case 2:
+		$scope.expr += ($scope.numbers[2]).toString();
+		break;
+	case 3:
+		$scope.expr += ($scope.numbers[3]).toString();
+		break;
+	case 4:
+		$scope.expr += "+";
+		break;
+	case 5:
+		$scope.expr += "-";
+		break;
+	case 6:
+		$scope.expr += "*";
+		break;
+	case 7:
+		$scope.expr += "/";
+		break;
+	case 8:
+		$scope.expr += "(";
+		break;
+	case 9:
+		$scope.expr += ")";
+		break;}
+	}
+
 });
 
 /* Helper Functions */
@@ -65,3 +103,4 @@ function validate(numbers, response) {
     if (!array_equal(parsedInts.sort(), numbersCopy.sort())) {return false;}
     return true;
 }
+
