@@ -5,29 +5,22 @@
 	<script src="/javascripts/game24.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/flat-ui.css">
 	<link rel="stylesheet" type="text/css" href="/css/game24.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 </head>
 <body ng-controller="NumberController">
 	<center><h1>24 Game!</h1></center>
 	<hr class="top_bar">
-	<div class="cards">
-		<span id="first">
-			{{numbers[0]}}
-		</span>
-		<span id="space"></span>
-		<span id="second">
-			{{numbers[1]}}
-		</span>
+	<center><div class="cards">
+		<span id="first" class="animated fadeInLeft">{{numbers[0]}}</span>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<span id="second" class="animated fadeInRight">{{numbers[1]}}</span>
 		<br>
-		<span id="third">
-			{{numbers[2]}}
-		</span>
-		<span id="space"></span>
-		<span id="fourth">
-			{{numbers[3]}}
-		</span>
-	</div>
+		<span id="third" class="animated fadeInLeft">{{numbers[2]}}</span>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<span id="fourth" class="animated fadeInRight">{{numbers[3]}}</span>
+	</div></center>
 	<div class="buttons">
 		<button class="btn btn-embossed btn-info" ng-click="init()">
 		<span class="fui-play"></span>

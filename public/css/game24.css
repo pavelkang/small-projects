@@ -1,27 +1,29 @@
 .btn.btn-embossed.btn-info {
 	width:60px;
 }
-
+/*
 #first {
-	padding-left: 37%;
+	position: relative;
+	left: 40%;
 }
 
 #second {
-	padding-left: 20%;
+	position: relative;
+	left: 60%;
 }
 
 #third {
-	padding-left: 37%;
+	right: 20%;
 }
 
 #fourth {
-	padding-left: 20%;
+	left: 20%;
 }
 
 #space {
 	position: absolute;
 	left:50%;
-}
+}*/
 
 .cards {
 	font-size: 40px;
