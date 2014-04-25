@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 </head>
 <body ng-controller="NumberController">
-	<center><h1 class="animated fadeInDown">24 Game!</h1></center>
+	<center><h3 class="animated fadeInDown">24 Game!</h3></center>
 	<hr class="top_bar">
 	<center><div class="cards">
 		<span id="first">{{numbers[0]}}</span>
@@ -20,7 +20,7 @@
 		<span id="third">{{numbers[2]}}</span>
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		<span id="fourth" >{{numbers[3]}}</span>
-	</div></center>
+		</div>
 
 
 
@@ -36,23 +36,22 @@
 			<button type="submit" class="btn btn-embossed btn-success" ng-click="submit()">
 			<span class="fui-check"></span>
 			</button>
-
+			<span id="feedback" ng-model="feedback">{{feedback}}</span>
 		</form>
+
 	</div></center>
 	<center><div class="buttons">
 	<button class="btn btn-default" ng-click="press(0)">{{numbers[0]}}</button>
 	<button class="btn btn-default" ng-click="press(1)">{{numbers[1]}}</button>
 	<button class="btn btn-default" ng-click="press(2)">{{numbers[2]}}</button>
-	<button class="btn btn-default" ng-click="press(3)">{{numbers[3]}}</button> <br>
+	<button class="btn btn-default" ng-click="press(3)">{{numbers[3]}}</button> 	
+	<br>
 	<button class="btn btn-danger" ng-click="press(4)">+</button>
 	<button class="btn btn-warning"style="background-color:#e67e22" ng-click="press(5)">-</button>
 	<button class="btn btn-warning" ng-click="press(6)">x</button>
-	<button class="btn btn-primary" ng-click="press(7)">/</button>
+	<button class="btn btn-primary" ng-click="press(7)">/</button> <br>
+	<button class="btn btn-danger" ng-click="press(10)"><span class="fui-arrow-left"></span></button>
 	<button class="btn btn-inverse" ng-click="press(8)">(</button>
 	<button class="btn btn-inverse" ng-click="press(9)">)</button>
-	</div></center>
-	<center><div>
-	<span><h6>correct!</h6></span>
-	</div></center>
 </body>
 </html>

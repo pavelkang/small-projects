@@ -42,3 +42,9 @@
 	background-color : #2980b9;
 	border : 0;
 }
+
+#feedback {
+	position: absolute;
+	right:20%;
+	
+}

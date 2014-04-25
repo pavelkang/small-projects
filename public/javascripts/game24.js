@@ -3,6 +3,7 @@ game24.controller('NumberController', function($scope, $parse){
 	$scope.numbers = [1,2,3,4];
 	var result = 0;
 	$scope.expr = "";
+	$scope.feedback="";
 	$scope.$watch('expr', function(newVal, oldVal, scope){
 		if (newVal !== oldVal) {
 			try{
@@ -21,7 +22,7 @@ game24.controller('NumberController', function($scope, $parse){
 			newNumbers.push(randomCard());
 		}
 		$scope.numbers = newNumbers;
-
+	
 		/*
 		for (var i=0; i<4; i++){
 			$scope.numbers[i] = randomCard();}*/
@@ -29,12 +30,15 @@ game24.controller('NumberController', function($scope, $parse){
 	};
 	$scope.submit = function() {
 		if (result==24 && validate($scope.numbers,$scope.expr)) {
-			alert("Correct!");
+			$scope.feedback = "Correct!";
 			console.log("Correct!");
 		}
 		else {
+			$scope.feedback = "Wrong!";
 			console.log("Wrong!");
 		}
+		var update = function() {$scope.feedback = "";$scope.expr="";clearInterval(refreshID);$scope.init();}
+		var refreshID = setInterval(function(){$scope.$apply(update);}, 1000)
 	}
 
 
@@ -69,7 +73,13 @@ game24.controller('NumberController', function($scope, $parse){
 		break;
 	case 9:
 		$scope.expr += ")";
-		break;}
+		break;
+	case 10:
+		if ($scope.expr.length!=0){
+			$scope.expr = $scope.expr.slice(0,-1);
+		}
+		break;
+	}
 	}
 
 });
