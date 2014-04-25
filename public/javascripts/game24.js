@@ -1,7 +1,7 @@
 var game24 = angular.module('game24', []);
 game24.controller('NumberController', function($scope, $parse){
 	$scope.numbers = [1,2,3,4];
-	var result = {};
+	var result = 0;
 	$scope.expr = "";
 	$scope.$watch('expr', function(newVal, oldVal, scope){
 		if (newVal !== oldVal) {
@@ -14,19 +14,30 @@ game24.controller('NumberController', function($scope, $parse){
 			catch(err){null;}
 		}
 	});
+	
 	$scope.init = function() {
+		newNumbers = new Array();
+		for (var i=0; i<4; i++) {
+			newNumbers.push(randomCard());
+		}
+		$scope.numbers = newNumbers;
+
+		/*
 		for (var i=0; i<4; i++){
-			$scope.numbers[i] = randomCard();}
+			$scope.numbers[i] = randomCard();}*/
 		for (var i=0; i<4; i++){console.log($scope.numbers[i])}		
 	};
 	$scope.submit = function() {
 		if (result==24 && validate($scope.numbers,$scope.expr)) {
+			alert("Correct!");
 			console.log("Correct!");
 		}
 		else {
 			console.log("Wrong!");
 		}
 	}
+
+
 	$scope.press = function(n) {
 	switch (n){
 	case 0:
@@ -103,4 +114,3 @@ function validate(numbers, response) {
     if (!array_equal(parsedInts.sort(), numbersCopy.sort())) {return false;}
     return true;
 }
-
