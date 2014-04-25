@@ -30,7 +30,8 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/googleAuthFinished', routes.googleAuthFinished);
 app.get('/saveToGoogle', routes.saveToGoogle);
-
+app.get('/chat', routes.chat);
+app.get('/24', routes.game24);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

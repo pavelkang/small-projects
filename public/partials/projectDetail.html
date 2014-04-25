@@ -3,7 +3,16 @@
 <div>
 	<h2> Detailed Description </h2> {{project.detailed_des}}
 </div>
+<div>
+	<img class="clickable" data-ng-src="{{imgUrl}}" data-ng-click="myClick()" >
+	<h2> Event Handler Test</h2> 
+</div>
 
 <div>
 	<h2> Demo </h2> {{project.demo}}
+	<button ng-click="hello('Kai')">Hi</button>
+</div>
+
+<div>
+	<h2 >Demostration of filter</h2> {{"lower case" | uppercase}} 
 </div>

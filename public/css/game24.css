@@ -1,0 +1,35 @@
+.btn.btn-embossed.btn-info {
+	width:60px;
+}
+
+#first {
+	padding-left: 37%;
+}
+
+#second {
+	padding-left: 20%;
+}
+
+#third {
+	padding-left: 37%;
+}
+
+#fourth {
+	padding-left: 20%;
+}
+
+#space {
+	position: absolute;
+	left:50%;
+}
+
+.cards {
+	font-size: 40px;
+}
+
+.top_bar {
+	height: 2px;
+	color : #2980b9;
+	background-color : #2980b9;
+	border : 0;
+}

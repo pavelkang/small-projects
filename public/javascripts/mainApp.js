@@ -6,7 +6,7 @@ mainApp.config(['$routeProvider',
 		$routeProvider.
 		when('/projects',{
 			templateUrl : '/partials/projectList.html',
-			controller  : 'MainController',
+			controller  : 'ListController'
 		}).
 		// anything after : in URL is routeParam
 		when('/projects/:projectName',{

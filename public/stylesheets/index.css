@@ -18,9 +18,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-img {
+.projectImg {
 	height: 2%;
 	width: 2%;
+}
+
+img.clickable {
+	cursor: pointer;
 }
 
 #container {

@@ -1,0 +1,37 @@
+<html ng-app="game24">
+<head>
+	<title>24 Game</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="/javascripts/game24.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/flat-ui.css">
+	<link rel="stylesheet" type="text/css" href="/css/game24.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+</head>
+<body ng-controller="NumberController">
+	<center><h1>24 Game!</h1></center>
+	<hr class="top_bar">
+	<div class="cards">
+		<span id="first">
+			{{numbers[0]}}
+		</span>
+		<span id="space"></span>
+		<span id="second">
+			{{numbers[1]}}
+		</span>
+		<br>
+		<span id="third">
+			{{numbers[2]}}
+		</span>
+		<span id="space"></span>
+		<span id="fourth">
+			{{numbers[3]}}
+		</span>
+	</div>
+	<div class="buttons">
+		<button class="btn btn-embossed btn-info" ng-click="init()">
+		<span class="fui-play"></span>
+		</button>
+	</div>
+</body>
+</html>

@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="">
 <head>
 	<title>Save File To Google</title>
+	<script src="https://apis.google.com/js/platform.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular-route.js"></script>
 </head>
 <body>
-	<form action="http://www.google.com">
-		URL of file: <input type="text"/><br>
-		Folder to save: <input type="text"/><br>
-		<button>Save</button>
-	</form>
+	<div class="saveToDriveButton">
+		<h1>1. Choose a file to upload</h1>
+		<div class="g-savetodrive" data-src="https://www.google.com/images/srpr/logo11w.png" data-filename="google.png"
+		data-sitename="saveToGoogle">
+		</div>
+	</div>
+	<div class="setupPicker">
+		<h1>2. Setup a Picker</h1>
+		
+	</div>
 </body>
 </html>
