@@ -1,37 +1,7 @@
-var game24 = angular.module('game24', []);
-game24.controller('NumberController', function($scope, $parse){
-	$scope.numbers = [1,2,3,4];
-	var result = {};
-	$scope.$watch('expr', function(newVal, oldVal, scope){
-		if (newVal !== oldVal) {
-			try{
-				var parseFun = $parse(newVal);
-				result = parseFun(scope);}
-			catch(err){null;}
-		}
-	});
-	$scope.init = function() {
-		for (var i=0; i<4; i++){
-			$scope.numbers[i] = randomCard();
-		}
-	};
-	$scope.submit = function() {
-		if (result==24 && validate($scope.numbers,$scope.expr)) {
-			console.log("Correct!");
-		}
-		else {
-			console.log("Wrong!");
-		}
-	}
-});
-
-/* Helper Functions */
-var randomCard = function(){
-	var interval = 1.0/13;
-	var result = parseInt(Math.random()/interval)+1;
-	return result;
-}
-
+/*
+  Takes a string of a game 24 answer
+  Returns a bool representing the correctness of the answer
+  */
 function isDigit(chr) {
     if (chr>="0" && chr<="9") {return true;}
     return false;
@@ -64,3 +34,6 @@ function validate(numbers, response) {
     if (!array_equal(parsedInts.sort(), numbers.sort())) {return false;}
     return true;
 }
+console.log(validate([4,10,2,9], "10*4-2+9"));
+console.log(validate([4,10,2,9], "10*4-2+8"));
+//validate([4,2,1],"12");
