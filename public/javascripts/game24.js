@@ -45,6 +45,7 @@ function array_equal(array1, array2) {
 }
 
 function validate(numbers, response) {
+	numbersCopy = numbers.slice(0); // copy by value
     parsedInts = new Array();
     current_number = "";
     for (var i=0; i<response.length; i++){
@@ -61,6 +62,6 @@ function validate(numbers, response) {
 	current_number = "";
     }
     if (parsedInts.length != 4) {return false;}
-    if (!array_equal(parsedInts.sort(), numbers.sort())) {return false;}
+    if (!array_equal(parsedInts.sort(), numbersCopy.sort())) {return false;}
     return true;
 }
