@@ -1,4 +1,6 @@
-var totalTime = 60000;
+var totalTime = 10000;  // total time of one game
+var checkInterval = 500; // the time it waits for the next game
+var clockInterval = 100; // the time the clock refreshes 
 var game24 = angular.module('game24', []);
 game24.factory('Data', function(){
 	return {
@@ -27,9 +29,10 @@ game24.controller('SettingsController', function($scope, Data){
 			$scope.panel.remainingTime = totalTime - ($scope.panel.currentTime - $scope.panel.startTime);
 			if ($scope.panel.remainingTime < totalTime/2) {$scope.data.clockStyle.color="orange";}
 			if ($scope.panel.remainingTime < totalTime/10) {$scope.data.clockStyle.color="red";}
+			if ($scope.panel.remainingTime <= 0) {$scope.data.isGameOn = false; clearInterval(clockInt);}
 		}
 	};
-	var clockInt = setInterval(function(){$scope.$apply(updateClock);}, 100);
+	var clockInt = setInterval(function(){$scope.$apply(updateClock);}, clockInterval);
 });
 game24.controller('NumberController', function($scope, $parse, Data){
 	$scope.data = Data;
@@ -65,7 +68,7 @@ game24.controller('NumberController', function($scope, $parse, Data){
 			$scope.feedback = "Wrong!";
 		}
 		var update = function() {$scope.feedback = "";$scope.expr="";clearInterval(refreshID);$scope.init();}
-		var refreshID = setInterval(function(){$scope.$apply(update);}, 1000)
+		var refreshID = setInterval(function(){$scope.$apply(update);}, checkInterval);
 	}
 
 
@@ -116,7 +119,7 @@ game24.controller('NumberController', function($scope, $parse, Data){
 game24.filter('clockFilter', function(){
 	return function(input) {
 		if (input > 0) { return (input/1000).toFixed(2);}
-		else {return 0.00;}
+		else {return (0).toFixed(2);}
 	};
 });
 

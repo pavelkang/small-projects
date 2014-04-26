@@ -16,14 +16,14 @@
 	 },false);
 	 </script>
 </head>
-<body >
-	<div ng-controller="SettingsController" class="control_panel">
-		<h6 style="color:#9b59b6;font-size:15px;">{{panel.title}} </h6>
-		<button class="btn btn-embossed btn-info start" ng-click="startGame()"><span class="fui-cmd"></span></button><br>
+<body>
+	<span ng-controller="SettingsController" class="control_panel">
+		<!-- <h6 style="color:#9b59b6;font-size:15px;">{{panel.title}} </h6> -->
+		<button class="btn btn-embossed btn-info start" ng-click="startGame()"><span class="fui-cmd"></span></button>
 		<button class="btn btn-embossed btn-info restart"><span class="fui-cross"></span></button>
-		<h5 ng-style="data.clockStyle">{{panel.remainingTime | clockFilter}}</h5>
-		<h5 style="color:green">{{data.numOfSolved}} </h5>
-	</div>
+		<span ng-style="data.clockStyle" style="display:inline">{{panel.remainingTime | clockFilter}}</span>
+		<span style="color:black" style="display:inline;">{{data.numOfSolved}} </span> 
+	</span>
 	<div ng-controller="NumberController">
 	<center><h5 class="animated fadeInDown">24 Game!</h5></center>
 	<hr class="top_bar">

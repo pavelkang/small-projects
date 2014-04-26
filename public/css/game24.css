@@ -8,11 +8,13 @@
 .btn.btn-embossed.btn-info.restart {
 	background-color : #d35400;
 	font-size :10px;
+	left : 20%;
 }
 
 .btn.btn-embossed.btn-info.start { 
 	background-color : #2ecc71;
 	font-size :10px;
+	left : 40%;
 }
 
 .btn.btn-default {
@@ -37,8 +39,7 @@
 
 .control_panel {
 	position : fixed;
-	left : 0px;
-	top : 0%;
+	bottom : 2px;
 }
 
 .cards {
