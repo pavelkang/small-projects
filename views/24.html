@@ -6,9 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/flat-ui.css">
 	<link rel="stylesheet" type="text/css" href="/css/game24.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+	<script type="application/javascript" src="/javascripts/fastclick.js"></script>
 </head>
 <body ng-controller="NumberController">
 	<center><h5 class="animated fadeInDown">24 Game!</h5></center>
@@ -56,5 +57,11 @@
 	<button class="btn btn-danger" ng-click="press(10)">C</button>
 	<button class="btn btn-danger" ng-click="press(11)">AC</button></div></center>
 	<center><p id="feedback" ng-model="feedback" ng-style="responseColor">{{feedback}}</p></center>
+	<script type="text/javascript">
+	window.addEventListener('load', function(){
+		FastClick.attach(document.body);
+	},false);
+
+	</script>
 </body>
 </html>
