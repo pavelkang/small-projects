@@ -5,6 +5,16 @@
 	width:120px;
 }
 
+.btn.btn-embossed.btn-info.restart {
+	background-color : #d35400;
+	font-size :10px;
+}
+
+.btn.btn-embossed.btn-info.start { 
+	background-color : #2ecc71;
+	font-size :10px;
+}
+
 .btn.btn-default {
 	width:50px;
 	background-color: #7f8c8d;
@@ -28,16 +38,17 @@
 .control_panel {
 	position : fixed;
 	left : 0px;
-	top : 30%;
+	top : 0%;
 }
 
 .cards {
-	/*padding-top:10px;*/
 	padding-bottom: 10px;
 	font-size: 40px;
 }
 
-
+body {
+	background-color:#f9f9f9;
+}
 
 .top_bar {
 	height: 2px;
@@ -50,12 +61,3 @@
 	color:#27ae60;
 }
 
-.btn.btn-embossed.btn-info.restart {
-	background-color : #d35400;
-	font-size :10px;
-}
-
-.btn.btn-embossed.btn-info.start { 
-	background-color : #2ecc71;
-	font-size :10px;
-}
