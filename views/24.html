@@ -8,10 +8,23 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css"> -->
 	<script type="application/javascript" src="/javascripts/fastclick.js"></script>
+	 <script type="text/javascript">
+	 window.addEventListener('load', function(){
+	 	FastClick.attach(document.body);
+	 },false);
+	 </script>
 </head>
-<body ng-controller="NumberController">
+<body >
+	<div ng-controller="SettingsController" class="control_panel">
+		<h6 style="color:#9b59b6;font-size:15px;">{{panel.title}} </h6>
+		<button class="btn btn-embossed btn-info start" ng-click="startGame()"><span class="fui-cmd"></span></button><br>
+		<button class="btn btn-embossed btn-info restart"><span class="fui-cross"></span></button>
+		<h5 ng-style="data.clockStyle">{{panel.remainingTime | clockFilter}}</h5>
+		<h5 style="color:green">{{data.numOfSolved}} </h5>
+	</div>
+	<div ng-controller="NumberController">
 	<center><h5 class="animated fadeInDown">24 Game!</h5></center>
 	<hr class="top_bar">
 	<center><div class="cards">
@@ -24,11 +37,6 @@
 		<span id="fourth" >{{numbers[3]}}</span>
 		</div>
 	<!-- <button class="pure-button" ng-click="press(0)">A pure button</button> -->
-
-
-
-
-
 
 	<center><div class="response">
 		<form>
@@ -56,12 +64,7 @@
 	<button class="btn btn-inverse" ng-click="press(9)">)</button>
 	<button class="btn btn-danger" ng-click="press(10)">C</button>
 	<button class="btn btn-danger" ng-click="press(11)">AC</button></div></center>
-	<center><p id="feedback" ng-model="feedback" ng-style="responseColor">{{feedback}}</p></center>
-	<script type="text/javascript">
-	window.addEventListener('load', function(){
-		FastClick.attach(document.body);
-	},false);
-
-	</script>
+	<center><p id="feedback" ng-model="feedback" ng-style="responseColor">{{feedback}}</p></center></div>
+	
 </body>
 </html>

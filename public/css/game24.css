@@ -25,29 +25,11 @@
 	width:50px;
 }
 
-/*
-#first {
-	position: relative;
-	left: 40%;
+.control_panel {
+	position : fixed;
+	left : 0px;
+	top : 30%;
 }
-
-#second {
-	position: relative;
-	left: 60%;
-}
-
-#third {
-	right: 20%;
-}
-
-#fourth {
-	left: 20%;
-}
-
-#space {
-	position: absolute;
-	left:50%;
-}*/
 
 .cards {
 	/*padding-top:10px;*/
@@ -66,4 +48,14 @@
 
 #feedback {
 	color:#27ae60;
+}
+
+.btn.btn-embossed.btn-info.restart {
+	background-color : #d35400;
+	font-size :10px;
+}
+
+.btn.btn-embossed.btn-info.start { 
+	background-color : #2ecc71;
+	font-size :10px;
 }

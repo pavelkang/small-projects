@@ -1,5 +1,38 @@
+var totalTime = 60000;
 var game24 = angular.module('game24', []);
-game24.controller('NumberController', function($scope, $parse){
+game24.factory('Data', function(){
+	return {
+		isGameOn : false,
+		no : "hi",
+		numOfSolved : 0,
+		clockStyle : {color : "green"}
+	};
+})
+game24.controller('SettingsController', function($scope, Data){
+	$scope.data  = Data;
+	$scope.startGame = function() {
+		Data.isGameOn = true;
+		Data.no = "you";
+		$scope.panel.startTime = new Date();
+	}
+	$scope.panel = {
+		title:"1 min game",
+		remainingTime : totalTime,
+		startTime : null,
+		currentTime : null
+	};
+	var updateClock = function() {
+		if ($scope.data.isGameOn) {
+			$scope.panel.currentTime= new Date();	
+			$scope.panel.remainingTime = totalTime - ($scope.panel.currentTime - $scope.panel.startTime);
+			if ($scope.panel.remainingTime < totalTime/2) {$scope.data.clockStyle.color="orange";}
+			if ($scope.panel.remainingTime < totalTime/10) {$scope.data.clockStyle.color="red";}
+		}
+	};
+	var clockInt = setInterval(function(){$scope.$apply(updateClock);}, 100);
+});
+game24.controller('NumberController', function($scope, $parse, Data){
+	$scope.data = Data;
 	$scope.numbers = [1,2,3,4];
 	$scope.responseColor = {color:"red"};
 	var result = 0;
@@ -8,9 +41,6 @@ game24.controller('NumberController', function($scope, $parse){
 	$scope.$watch('expr', function(newVal, oldVal, scope){
 		if (newVal !== oldVal) {
 			try{
-				/*
-				var parseFun = $parse(newVal);
-				result = parseFun(scope);*/
 				result = eval(newVal);
 			}
 			catch(err){null;}
@@ -28,6 +58,7 @@ game24.controller('NumberController', function($scope, $parse){
 		if (result==24 && validate($scope.numbers,$scope.expr)) {
 			$scope.responseColor.color = "green";
 			$scope.feedback = "Correct!";
+			if($scope.data.isGameOn){$scope.data.numOfSolved += 1;}
 		}
 		else {
 			$scope.responseColor.color = "red";
@@ -80,8 +111,13 @@ game24.controller('NumberController', function($scope, $parse){
 		break;
 	}
 	}
-	
+});
 
+game24.filter('clockFilter', function(){
+	return function(input) {
+		if (input > 0) { return (input/1000).toFixed(2);}
+		else {return 0.00;}
+	};
 });
 
 
