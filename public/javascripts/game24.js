@@ -1,6 +1,7 @@
 var game24 = angular.module('game24', []);
 game24.controller('NumberController', function($scope, $parse){
 	$scope.numbers = [1,2,3,4];
+	$scope.responseColor = {color:"red"};
 	var result = 0;
 	$scope.expr = "";
 	$scope.feedback="";
@@ -22,20 +23,15 @@ game24.controller('NumberController', function($scope, $parse){
 			newNumbers.push(randomCard());
 		}
 		$scope.numbers = newNumbers;
-	
-		/*
-		for (var i=0; i<4; i++){
-			$scope.numbers[i] = randomCard();}*/
-		for (var i=0; i<4; i++){console.log($scope.numbers[i])}		
 	};
 	$scope.submit = function() {
 		if (result==24 && validate($scope.numbers,$scope.expr)) {
+			$scope.responseColor.color = "green";
 			$scope.feedback = "Correct!";
-			console.log("Correct!");
 		}
 		else {
+			$scope.responseColor.color = "red";
 			$scope.feedback = "Wrong!";
-			console.log("Wrong!");
 		}
 		var update = function() {$scope.feedback = "";$scope.expr="";clearInterval(refreshID);$scope.init();}
 		var refreshID = setInterval(function(){$scope.$apply(update);}, 1000)
@@ -84,10 +80,14 @@ game24.controller('NumberController', function($scope, $parse){
 		break;
 	}
 	}
+	
 
 });
 
+
+
 /* Helper Functions */
+
 var randomCard = function(){
 	var interval = 1.0/13;
 	var result = parseInt(Math.random()/interval)+1;
