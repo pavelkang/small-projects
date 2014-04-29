@@ -1,21 +1,29 @@
-var totalTime = 10000;  // total time of one game
+var totalTime = 60000;  // total time of one game
 var checkInterval = 500; // the time it waits for the next game
 var clockInterval = 100; // the time the clock refreshes 
 var game24 = angular.module('game24', []);
+
 game24.factory('Data', function(){
 	return {
 		isGameOn : false,
-		no : "hi",
 		numOfSolved : 0,
-		clockStyle : {color : "green"}
+		clockStyle : {color : "green"},
+		numbers : [1,2,3,4]
 	};
 })
+
 game24.controller('SettingsController', function($scope, Data){
 	$scope.data  = Data;
+	$scope.restartGame = function() {
+		Data.isGameOn = false;
+		Data.numOfSolved = 0;
+		Data.clockStyle.color = "green";
+		$scope.panel.remainingTime = totalTime;
+	}
 	$scope.startGame = function() {
 		Data.isGameOn = true;
-		Data.no = "you";
 		$scope.panel.startTime = new Date();
+		for (var i=0;i<4;i++) {$scope.data.numbers[i]=randomCard();}
 	}
 	$scope.panel = {
 		title:"1 min game",
@@ -36,7 +44,6 @@ game24.controller('SettingsController', function($scope, Data){
 });
 game24.controller('NumberController', function($scope, $parse, Data){
 	$scope.data = Data;
-	$scope.numbers = [1,2,3,4];
 	$scope.responseColor = {color:"red"};
 	var result = 0;
 	$scope.expr = "";
@@ -55,10 +62,10 @@ game24.controller('NumberController', function($scope, $parse, Data){
 		for (var i=0; i<4; i++) {
 			newNumbers.push(randomCard());
 		}
-		$scope.numbers = newNumbers;
+		$scope.data.numbers = newNumbers;
 	};
 	$scope.submit = function() {
-		if (result==24 && validate($scope.numbers,$scope.expr)) {
+		if (result==24 && validate($scope.data.numbers,$scope.expr)) {
 			$scope.responseColor.color = "green";
 			$scope.feedback = "Correct!";
 			if($scope.data.isGameOn){$scope.data.numOfSolved += 1;}
@@ -75,16 +82,16 @@ game24.controller('NumberController', function($scope, $parse, Data){
 	$scope.press = function(n) {
 	switch (n){
 	case 0:
-		$scope.expr += ($scope.numbers[0]).toString();
+		$scope.expr += ($scope.data.numbers[0]).toString();
 		break;
 	case 1:
-		$scope.expr += ($scope.numbers[1]).toString();
+		$scope.expr += ($scope.data.numbers[1]).toString();
 		break;
 	case 2:
-		$scope.expr += ($scope.numbers[2]).toString();
+		$scope.expr += ($scope.data.numbers[2]).toString();
 		break;
 	case 3:
-		$scope.expr += ($scope.numbers[3]).toString();
+		$scope.expr += ($scope.data.numbers[3]).toString();
 		break;
 	case 4:
 		$scope.expr += "+";
@@ -127,7 +134,7 @@ game24.filter('clockFilter', function(){
 
 /* Helper Functions */
 
-var randomCard = function(){
+function randomCard(){
 	var interval = 1.0/13;
 	var result = parseInt(Math.random()/interval)+1;
 	return result;

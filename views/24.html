@@ -20,7 +20,7 @@
 	<span ng-controller="SettingsController" class="control_panel">
 		<!-- <h6 style="color:#9b59b6;font-size:15px;">{{panel.title}} </h6> -->
 		<button class="btn btn-embossed btn-info start" ng-click="startGame()"><span class="fui-cmd"></span></button>
-		<button class="btn btn-embossed btn-info restart"><span class="fui-cross"></span></button>
+		<button class="btn btn-embossed btn-info restart" ng-click="restartGame()"><span class="fui-cross"></span></button>
 		<span ng-style="data.clockStyle" style="display:inline">{{panel.remainingTime | clockFilter}}</span>
 		<span style="color:black" style="display:inline;">{{data.numOfSolved}} </span> 
 	</span>
@@ -28,13 +28,13 @@
 	<center><h5 class="animated fadeInDown">24 Game!</h5></center>
 	<hr class="top_bar">
 	<center><div class="cards">
-		<span id="first">{{numbers[0]}}</span>
+		<span id="first">{{data.numbers[0]}}</span>
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		<span id="second" >{{numbers[1]}}</span>
+		<span id="second" >{{data.numbers[1]}}</span>
 		<br>
-		<span id="third">{{numbers[2]}}</span>
+		<span id="third">{{data.numbers[2]}}</span>
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		<span id="fourth" >{{numbers[3]}}</span>
+		<span id="fourth" >{{data.numbers[3]}}</span>
 		</div>
 	<!-- <button class="pure-button" ng-click="press(0)">A pure button</button> -->
 
@@ -51,10 +51,10 @@
 
 	</div></center>
 	<center><div class="buttons">
-	<button class="btn btn-default" ng-click="press(0)">{{numbers[0]}}</button>
-	<button class="btn btn-default" ng-click="press(1)">{{numbers[1]}}</button>
-	<button class="btn btn-default" ng-click="press(2)">{{numbers[2]}}</button>
-	<button class="btn btn-default" ng-click="press(3)">{{numbers[3]}}</button> 	
+	<button class="btn btn-default" ng-click="press(0)">{{data.numbers[0]}}</button>
+	<button class="btn btn-default" ng-click="press(1)">{{data.numbers[1]}}</button>
+	<button class="btn btn-default" ng-click="press(2)">{{data.numbers[2]}}</button>
+	<button class="btn btn-default" ng-click="press(3)">{{data.numbers[3]}}</button> 	
 	<br>
 	<button class="btn btn-danger" ng-click="press(4)">+</button>
 	<button class="btn btn-warning"style="background-color:#e67e22" ng-click="press(5)">-</button>
