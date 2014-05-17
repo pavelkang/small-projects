@@ -1,3 +1,7 @@
+.nav, .pagination, .panel-title a {
+	cursor: pointer;
+}
+
 h1 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
@@ -8,6 +12,10 @@ h1 {
 	color:#A4c739;
 	background-color: #A4c739;
 	height:2px;
+}
+
+#allProjects {
+	padding-top :10px;
 }
 
 body {
@@ -33,6 +41,5 @@ img.clickable {
 
 #project_name {
 	display:inline-block;
-	box-shadow: 10px 10px 5px #888888;
-	font-family: 'ubuntu', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }

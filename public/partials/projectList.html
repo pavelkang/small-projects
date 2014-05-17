@@ -1,4 +1,4 @@
-Search for project: <input ng-model="query"> You are looking for project {{query}} <br>
+Search for project: <input ng-model="query">
 Sort by:
 <select ng-model="orderProp">
 	<option value="name">Name</option>
@@ -8,8 +8,7 @@ Sort by:
 	<ul class="projects">
 		<li data-ng-repeat="project in projects | filter: query | orderBy:orderProp">
 			<a href="#/projects/{{project.name}}">{{project.name}}</a><img class="projectImg" ng-src="{{project.imageUrl}}">
-			<br> {{project.des}} 
-			<hr>
+			<br> {{project.des}} <hr style="margin:5px">
 		</li>
 	</ul>
 </div>

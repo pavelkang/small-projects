@@ -7,5 +7,11 @@
 	"imageUrl" : "images/icons/android.png"},
 	{"name":"Pokemon3D", "lang":"Python", "date":"2013-11-20",
 	"des":"3D Pokemon game in Panda3D. 15-112 Term Project.",
-	"imageUrl" : "images/icons/android.png"}
+	"imageUrl" : "images/icons/android.png"},
+	{"name":"Game24", "lang":"javascript", "date":"2014-04-25",
+	"des":"Game 24 (use four numbers to get 24) on the web",
+	"imageUrl":"images/icons/android.png"},
+	{"name":"CMDragon", "lang":"C++", "date":"2014-05-01",
+	"des":"CMDragon team",
+	"imageUrl":"images/icons/android.png"}
 ]

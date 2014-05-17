@@ -1,18 +1,28 @@
 <h1 id="project_name">{{project.name}}</h1>
 
-<div>
-	<h2> Detailed Description </h2> {{project.detailed_des}}
-</div>
-<div>
-	<img class="clickable" data-ng-src="{{imgUrl}}" data-ng-click="myClick()" >
-	<h2> Event Handler Test</h2> 
-</div>
+<div ng-controller="AccordionDemoCtrl" style="padding:20px">
+  <accordion close-others="oneAtATime">
+    <accordion-group is-open="status.open1">
+        <accordion-heading>
+        Project Description<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open1, 'glyphicon-chevron-right': !status.open}"></i>
+        </accordion-heading>
+        {{project.detailed_des}}
+    </accordion-group>
+    
+    <accordion-group is-open="status.open3">
+        <accordion-heading>
+        Demo<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open3, 'glyphicon-chevron-right': !status.open}"></i>
+        </accordion-heading>
+        {{project.demo}}
+    </accordion-group>     
 
-<div>
-	<h2> Demo </h2> {{project.demo}}
-	<button ng-click="hello('Kai')">Hi</button>
-</div>
+    <accordion-group is-open="status.open2">
+        <accordion-heading>
+        Source Code<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open}"></i>
+        </accordion-heading>
+        {{project.src}}
+    </accordion-group>   
+   
 
-<div>
-	<h2 >Demostration of filter</h2> {{"lower case" | uppercase}} 
+  </accordion>
 </div>

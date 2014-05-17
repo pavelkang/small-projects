@@ -6,7 +6,13 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.8"
+    "express": "3.4.8",
+    "mongoose" : "~3.8.1",
+    "passport" : "~0.1.17",
+    "passport-local" : "~0.1.6",
+    "connect-flash" : "~0.1.1",
+    "bcrypt-nodejs" : "*",
+      "bower" : "*"
   },
   "description": "website of some web projects I have done",
   "main": "app.js",
